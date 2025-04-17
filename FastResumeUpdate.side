@@ -1,0 +1,82 @@
+{
+  "id": "c5704800-a0e3-4b05-afdd-81ab707e602c",
+  "version": "2.0",
+  "name": "naukriUpdateeeeeee",
+  "url": "https://www.naukri.com",
+  "tests": [{
+    "id": "3056e8d7-ce1a-4439-8429-4a504937f533",
+    "name": "xxxxxxx",
+    "commands": [{
+      "id": "fa57e537-fb93-4195-98c7-ef937f532404",
+      "comment": "",
+      "command": "open",
+      "target": "/mnjuser/homepage",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0dc2d695-a8b4-4a6d-8f48-ac0671bf74bc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b23e64c-819d-4665-aa49-1757de76a82a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View profile",
+      "targets": [
+        ["linkText=View profile", "linkText"],
+        ["css=.view-profile-wrapper > a", "css:finder"],
+        ["xpath=//a[contains(@href, '/mnjuser/profile')]", "xpath:href"],
+        ["xpath=//div/div[3]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'View profile')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "466dd6a7-4fee-4974-8767-ac21f6363d9a",
+      "comment": "",
+      "command": "waitForElementEditable",
+      "target": "xpath=//input[@id='attachCV']",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "29b202df-052f-4863-aef9-d3b21e18efd3",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@id='attachCV']",
+      "targets": [
+        ["id=attachCV", "id"],
+        ["css=#attachCV", "css:finder"],
+        ["xpath=//input[@id='attachCV']", "xpath:attributes"],
+        ["xpath=//div[@id='lazyAttachCV']/div/div[2]/div[2]/div/div[2]/div/div/section/div/div/input", "xpath:idRelative"],
+        ["xpath=//section/div/div/input", "xpath:position"]
+      ],
+      "value": "C:\\\\Users\\\\cheta\\\\Downloads\\\\Resume.pdf"
+    }, {
+      "id": "bd3e6505-850d-4bfe-98df-38111d017a0a",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//p[text()='Success']",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "70cf103f-ce17-429d-a94c-38bc2396bdf5",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//p[text()='Success']",
+      "targets": [],
+      "value": "Success"
+    }]
+  }],
+  "suites": [{
+    "id": "1696a53d-52f3-402d-9016-bc62ddccd56f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["3056e8d7-ce1a-4439-8429-4a504937f533"]
+  }],
+  "urls": ["https://www.naukri.com/"],
+  "plugins": []
+}
