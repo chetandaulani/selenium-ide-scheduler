@@ -1,6 +1,5 @@
 name: Run Selenium IDE Tests Daily
-run: |
-    selenium-side-runner --browser chrome --capabilities chromeOptions.args="['--headless','--no-sandbox','--disable-dev-shm-usage','--user-data-dir=/tmp/profile']" FastResumeUpdate.side
+
 on:
   workflow_dispatch:  # 👈 This enables manual trigger
   schedule:
@@ -26,4 +25,7 @@ jobs:
 
       - name: Run Selenium IDE Tests
         run: |
-          selenium-side-runner FastResumeUpdate.side
+          selenium-side-runner \
+            --browser chrome \
+            --capabilities chromeOptions.args="['--headless','--no-sandbox','--disable-dev-shm-usage','--user-data-dir=/tmp/profile']" \
+            FastResumeUpdate.side
