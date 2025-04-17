@@ -1,12 +1,12 @@
-name: Run Selenium IDE Tests Daily
+name: Run Selenium IDE Tests
 
 on:
-  workflow_dispatch:  # 👈 This enables manual trigger
+  workflow_dispatch:
   schedule:
-    - cron: '30 3 * * *'  # Runs daily at 9:00 AM IST (3:30 AM UTC)
+    - cron: '30 3 * * *'  # 9 AM IST
 
 jobs:
-  run-selenium-tests:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,14 +18,15 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Selenium IDE Runner
+      - name: Install Selenium-side-runner
         run: |
           npm install -g selenium-side-runner
           npm install -g chromedriver
 
       - name: Run Selenium IDE Tests
         run: |
+          mkdir -p /tmp/profile-$RANDOM
           selenium-side-runner \
             --browser chrome \
-            --capabilities chromeOptions.args="['--headless','--no-sandbox','--disable-dev-shm-usage','--user-data-dir=/tmp/profile']" \
+            --capabilities "goog:chromeOptions={args:['--headless','--no-sandbox','--disable-dev-shm-usage','--user-data-dir=/tmp/profile-$RANDOM']}" \
             FastResumeUpdate.side
